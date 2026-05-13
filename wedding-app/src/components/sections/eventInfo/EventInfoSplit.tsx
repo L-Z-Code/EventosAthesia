@@ -1,4 +1,5 @@
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './EventInfoSplit.module.css'
 
 type EventInfoSplitProps = {
   wedding: WeddingInfo
@@ -12,18 +13,18 @@ export function EventInfoSplit({ wedding }: EventInfoSplitProps) {
   ]
 
   return (
-    <section className="event-info-section" id="informacion">
-      <div className="event-info-list">
+    <section className={styles.section} id="informacion">
+      <div className={styles.list}>
         {items.map((item) => (
-          <article className="event-info-item" key={item.label}>
+          <article className={styles.item} key={item.label}>
             <h2>{item.label}</h2>
             <p>{item.value}</p>
           </article>
         ))}
-        <p className="event-info-closing">{wedding.eventInfo.closingText}</p>
+        <p className={styles.closing}>{wedding.eventInfo.closingText}</p>
       </div>
 
-      <div className="event-map">
+      <div className={styles.map}>
         <iframe
           title={`Mapa de ${wedding.venueName}`}
           src={wedding.mapsUrl}

@@ -11,8 +11,15 @@ export type DetailItem = {
 
 export type TemplateId = 'classic' | 'editorial'
 
+export type ThemeId = 'sage' | 'terracotta'
+
+export type ThemeConfig = {
+  palette: ThemeId
+}
+
 export type TemplateConfig = {
   page: TemplateId
+  nav: 'fixed'
   hero: 'classic' | 'editorial'
   eventInfo: 'split' | 'cards'
   invitation: 'centered' | 'editorial'
@@ -24,6 +31,7 @@ export type TemplateConfig = {
 export type WeddingInfo = {
   slug: string
   template: TemplateConfig
+  theme: ThemeConfig
   couple: {
     bride: string
     groom: string

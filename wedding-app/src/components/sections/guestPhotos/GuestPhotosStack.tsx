@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './GuestPhotosStack.module.css'
 
 type GuestPhotosStackProps = {
   wedding: WeddingInfo
@@ -25,12 +26,12 @@ export function GuestPhotosStack({ wedding }: GuestPhotosStackProps) {
   }
 
   return (
-    <section className="guest-photos-section" id="fotos" aria-label="Fotos de invitados">
-      <div className="guest-photos-heading">
+    <section className={styles.section} id="fotos" aria-label="Fotos de invitados">
+      <div className={styles.heading}>
         <p>Ayúdanos a capturar momentos de nuestra boda</p>
       </div>
 
-      <div className="guest-photos-stack" aria-live="polite">
+      <div className={styles.stack} aria-live="polite">
         {stackOffsets.map((offset) => {
           const photo = getPhoto(offset)
 
@@ -39,7 +40,7 @@ export function GuestPhotosStack({ wedding }: GuestPhotosStackProps) {
               key={`${photo.alt}-${offset}`}
               src={photo.src}
               alt={offset === 0 ? photo.alt : ''}
-              className="guest-photo-card"
+              className={styles.card}
               data-offset={offset}
               aria-hidden={offset !== 0}
             />
@@ -47,14 +48,14 @@ export function GuestPhotosStack({ wedding }: GuestPhotosStackProps) {
         })}
       </div>
 
-      <div className="guest-photos-controls">
-        <button type="button" className="guest-photos-arrow" onClick={previousPhoto} aria-label="Foto anterior">
+      <div className={styles.controls}>
+        <button type="button" className={styles.arrow} onClick={previousPhoto} aria-label="Foto anterior">
           ←
         </button>
-        <button type="button" className="guest-photos-view-all">
+        <button type="button" className={styles.viewAll}>
           Ver todo
         </button>
-        <button type="button" className="guest-photos-arrow" onClick={nextPhoto} aria-label="Siguiente foto">
+        <button type="button" className={styles.arrow} onClick={nextPhoto} aria-label="Siguiente foto">
           →
         </button>
       </div>

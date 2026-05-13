@@ -1,4 +1,5 @@
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './FooterSage.module.css'
 
 type FooterSageProps = {
   wedding: WeddingInfo
@@ -6,9 +7,9 @@ type FooterSageProps = {
 
 export function FooterSage({ wedding }: FooterSageProps) {
   return (
-    <footer className="site-footer">
-      <p className="footer-message">{wedding.footer.message}</p>
-      <p className="footer-details">
+    <footer className={styles.footer}>
+      <p className={styles.message}>{wedding.footer.message}</p>
+      <p className={styles.details}>
         {wedding.couple.bride} & {wedding.couple.groom} · {wedding.footer.date}
       </p>
     </footer>

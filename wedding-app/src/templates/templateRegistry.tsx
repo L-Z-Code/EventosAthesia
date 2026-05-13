@@ -11,10 +11,14 @@ import { HeroClassic } from '../components/sections/hero/HeroClassic'
 import { HeroEditorial } from '../components/sections/hero/HeroEditorial'
 import { InvitationCentered } from '../components/sections/invitation/InvitationCentered'
 import { InvitationEditorial } from '../components/sections/invitation/InvitationEditorial'
+import { FixedWeddingNav } from '../components/sections/nav/FixedWeddingNav'
 
 export type WeddingSectionComponent = ComponentType<{ wedding: WeddingInfo }>
 
 export const templateRegistry = {
+  nav: {
+    fixed: FixedWeddingNav,
+  },
   hero: {
     classic: HeroClassic,
     editorial: HeroEditorial,
@@ -39,6 +43,7 @@ export const templateRegistry = {
     minimal: FooterMinimal,
   },
 } satisfies {
+  nav: Record<TemplateConfig['nav'], WeddingSectionComponent>
   hero: Record<TemplateConfig['hero'], WeddingSectionComponent>
   eventInfo: Record<TemplateConfig['eventInfo'], WeddingSectionComponent>
   invitation: Record<TemplateConfig['invitation'], WeddingSectionComponent>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './GuestPhotosOverlay.module.css'
 
 type GuestPhotosOverlayProps = {
   wedding: WeddingInfo
@@ -20,13 +21,13 @@ export function GuestPhotosOverlay({ wedding }: GuestPhotosOverlayProps) {
   }
 
   return (
-    <section className="guest-photos-overlay-section" id="fotos" aria-label="Fotos de invitados">
-      <div className="guest-photos-overlay-frame">
-        <img className="guest-photos-overlay-main" src={mainPhoto.src} alt={mainPhoto.alt} />
-        <img className="guest-photos-overlay-preview" src={previewPhoto.src} alt="" aria-hidden="true" />
+    <section className={styles.section} id="fotos" aria-label="Fotos de invitados">
+      <div className={styles.frame}>
+        <img className={styles.main} src={mainPhoto.src} alt={mainPhoto.alt} />
+        <img className={styles.preview} src={previewPhoto.src} alt="" aria-hidden="true" />
       </div>
 
-      <div className="guest-photos-overlay-controls">
+      <div className={styles.controls}>
         <button type="button" onClick={previousPhoto} aria-label="Foto anterior">
           ←
         </button>

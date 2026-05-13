@@ -1,0 +1,54 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) auto minmax(180px, 1fr);
+  align-items: center;
+  width: 100%;
+  min-height: var(--nav-height, 76px);
+  padding: 0 clamp(22px, 3vw, 44px);
+  background: var(--color-nav-bg);
+  box-shadow: 0 1px 0 var(--color-nav-shadow);
+  color: var(--color-nav-text);
+}
+
+.monogram {
+  width: fit-content;
+  color: var(--color-nav-text);
+  font-family: var(--script);
+  font-size: clamp(1.9rem, 2.4vw, 2.8rem);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(22px, 3vw, 40px);
+}
+
+.links a {
+  color: var(--color-nav-text);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    min-height: auto;
+    padding: 18px 18px 20px;
+  }
+
+  .monogram,
+  .links {
+    justify-self: center;
+  }
+
+  .links a {
+    font-size: 0.75rem;
+  }
+}

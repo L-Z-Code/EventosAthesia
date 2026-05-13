@@ -1,0 +1,11 @@
+.page {
+  padding-top: var(--nav-height, 76px);
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .page {
+    --nav-height: 150px;
+  }
+}

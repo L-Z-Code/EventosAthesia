@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { useCountdown } from '../../hooks/useCountdown'
+import styles from './Countdown.module.css'
 
 type CountdownProps = {
   targetDate: Date
@@ -19,12 +20,12 @@ export function Countdown({ targetDate }: CountdownProps) {
   )
 
   return (
-    <div className="countdown" aria-label="Cuenta regresiva para la boda">
+    <div className={styles.countdown} aria-label="Cuenta regresiva para la boda">
       {countdownItems.map((item, index) => (
-        <div className="countdown-item" key={item.label}>
-          <span className="countdown-number">{item.value}</span>
-          <span className="countdown-label">{item.label}</span>
-          {index < countdownItems.length - 1 && <span className="countdown-separator">:</span>}
+        <div className={styles.item} key={item.label}>
+          <span className={styles.number}>{item.value}</span>
+          <span className={styles.label}>{item.label}</span>
+          {index < countdownItems.length - 1 && <span className={styles.separator}>:</span>}
         </div>
       ))}
     </div>

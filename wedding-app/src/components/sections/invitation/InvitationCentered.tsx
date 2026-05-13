@@ -1,4 +1,5 @@
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './InvitationCentered.module.css'
 
 type InvitationCenteredProps = {
   wedding: WeddingInfo
@@ -6,8 +7,8 @@ type InvitationCenteredProps = {
 
 export function InvitationCentered({ wedding }: InvitationCenteredProps) {
   return (
-    <section className="invitation-section">
-      <p className="eyebrow">{wedding.invitation.eyebrow}</p>
+    <section className={styles.section}>
+      <p className={styles.eyebrow}>{wedding.invitation.eyebrow}</p>
       <h2>{wedding.invitation.title}</h2>
       <p>{wedding.invitation.description}</p>
     </section>

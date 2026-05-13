@@ -1,0 +1,117 @@
+.section {
+  padding: clamp(64px, 9vw, 124px) clamp(22px, 7vw, 120px);
+  background: var(--color-surface);
+}
+
+.heading {
+  display: grid;
+  justify-items: center;
+  margin-bottom: clamp(28px, 4vw, 52px);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  margin: 0 0 24px;
+  color: var(--color-text);
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 5vw, 5.3rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: clamp(10px, 2vw, 24px);
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.carousel img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px var(--color-border);
+}
+
+.button {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+}
+
+.dots .active {
+  background: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .carousel {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+  }
+
+  .button {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 560px) {
+  .carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel img {
+    grid-row: 1;
+  }
+
+  .button {
+    position: absolute;
+    z-index: 1;
+    background: rgba(255, 250, 240, 0.86);
+  }
+
+  .button:first-child {
+    left: 10px;
+  }
+
+  .button:last-child {
+    right: 10px;
+  }
+}

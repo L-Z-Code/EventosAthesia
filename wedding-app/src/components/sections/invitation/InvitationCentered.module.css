@@ -1,0 +1,31 @@
+.section {
+  display: grid;
+  justify-items: center;
+  padding: clamp(64px, 9vw, 124px) clamp(22px, 7vw, 120px);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin: 0 0 24px;
+  color: var(--color-text);
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 5vw, 5.3rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.section p:last-child {
+  width: min(720px, 100%);
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}

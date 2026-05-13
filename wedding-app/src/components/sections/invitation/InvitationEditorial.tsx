@@ -1,4 +1,5 @@
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './InvitationEditorial.module.css'
 
 type InvitationEditorialProps = {
   wedding: WeddingInfo
@@ -6,8 +7,8 @@ type InvitationEditorialProps = {
 
 export function InvitationEditorial({ wedding }: InvitationEditorialProps) {
   return (
-    <section className="invitation-editorial">
-      <p className="eyebrow">{wedding.invitation.eyebrow}</p>
+    <section className={styles.section}>
+      <p className={styles.eyebrow}>{wedding.invitation.eyebrow}</p>
       <div>
         <h2>{wedding.invitation.title}</h2>
         <p>{wedding.invitation.description}</p>

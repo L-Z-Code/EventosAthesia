@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './GalleryClassic.module.css'
 
 type GalleryClassicProps = {
   wedding: WeddingInfo
@@ -26,28 +27,28 @@ export function GalleryClassic({ wedding }: GalleryClassicProps) {
   }
 
   return (
-    <section className="gallery-section" id="galeria" aria-label="Galería de fotos">
-      <div className="section-heading">
-        <p className="eyebrow">Galería</p>
+    <section className={styles.section} id="galeria" aria-label="Galería de fotos">
+      <div className={styles.heading}>
+        <p className={styles.eyebrow}>Galería</p>
         <h2>Nuestros momentos</h2>
       </div>
 
-      <div className="carousel">
-        <button type="button" className="carousel-button" onClick={previousPhoto} aria-label="Foto anterior">
+      <div className={styles.carousel}>
+        <button type="button" className={styles.button} onClick={previousPhoto} aria-label="Foto anterior">
           ‹
         </button>
         <img src={gallery[currentPhoto].src} alt={gallery[currentPhoto].alt} />
-        <button type="button" className="carousel-button" onClick={nextPhoto} aria-label="Foto siguiente">
+        <button type="button" className={styles.button} onClick={nextPhoto} aria-label="Foto siguiente">
           ›
         </button>
       </div>
 
-      <div className="photo-dots" aria-label="Seleccionar foto">
+      <div className={styles.dots} aria-label="Seleccionar foto">
         {gallery.map((photo, index) => (
           <button
             type="button"
             key={photo.alt}
-            className={index === currentPhoto ? 'active' : ''}
+            className={index === currentPhoto ? styles.active : ''}
             onClick={() => setCurrentPhoto(index)}
             aria-label={`Ver foto ${index + 1}`}
           />

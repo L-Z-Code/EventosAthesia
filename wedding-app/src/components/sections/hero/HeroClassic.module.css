@@ -1,0 +1,88 @@
+.section {
+  position: relative;
+  min-height: 145svh;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02) 45%, rgba(255, 255, 255, 0.28));
+}
+
+.copy {
+  position: sticky;
+  top: 130px;
+  z-index: 1;
+  display: grid;
+  min-height: calc(100svh - 120px);
+  place-items: center;
+  padding: 10svh 24px 18svh;
+  text-align: center;
+}
+
+.copy h1 {
+  display: grid;
+  gap: 0.04em;
+  margin: 0;
+  font-family: var(--script);
+  font-size: clamp(4.4rem, 8vw, 8.9rem);
+  font-weight: 400;
+  line-height: 0.75;
+  color: var(--color-hero-title);
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.28);
+}
+
+.copy h1 span:nth-child(2) {
+  font-size: 0.78em;
+}
+
+.copy p {
+  align-self: end;
+  width: min(674px, calc(100vw - 40px));
+  margin: 12svh auto 0;
+  padding: 18px clamp(20px, 3vw, 40px);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-text);
+  font-size: clamp(1rem, 1.6vw, 1.55rem);
+  line-height: 1.2;
+}
+
+@media (max-width: 900px) {
+  .section {
+    min-height: 132svh;
+    background-attachment: scroll;
+    background-position: 48% top;
+  }
+
+  .copy {
+    top: 160px;
+    min-height: calc(100svh - 170px);
+    padding-inline: 16px;
+  }
+
+  .copy h1 {
+    font-size: clamp(4.5rem, 17vw, 7rem);
+  }
+
+  .copy p {
+    margin-top: 18svh;
+    border-radius: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .copy {
+    top: 174px;
+  }
+
+  .copy p {
+    padding: 15px 18px;
+    font-size: 0.98rem;
+  }
+}

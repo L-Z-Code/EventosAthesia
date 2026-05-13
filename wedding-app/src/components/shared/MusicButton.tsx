@@ -1,4 +1,5 @@
 import { useMusicPlayer } from '../../hooks/useMusicPlayer'
+import styles from './MusicButton.module.css'
 
 export function MusicButton() {
   const { isMusicOn, toggleMusic } = useMusicPlayer()
@@ -6,13 +7,13 @@ export function MusicButton() {
   return (
     <button
       type="button"
-      className={`music-toggle ${isMusicOn ? 'is-playing' : ''}`}
+      className={`${styles.toggle} ${isMusicOn ? styles.isPlaying : ''}`}
       onClick={toggleMusic}
       aria-label={isMusicOn ? 'Pausar música' : 'Activar música'}
       aria-pressed={isMusicOn}
     >
       {isMusicOn && (
-        <span className="music-notes" aria-hidden="true">
+          <span className={styles.notes} aria-hidden="true">
           <span>♪</span>
           <span>♫</span>
           <span>♪</span>

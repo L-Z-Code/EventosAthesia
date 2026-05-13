@@ -9,12 +9,16 @@ export const anaCarlosWedding: WeddingInfo = {
   slug: 'ana-carlos',
   template: {
     page: 'editorial',
+    nav: 'fixed',
     hero: 'editorial',
     eventInfo: 'cards',
     invitation: 'editorial',
     gallery: 'classic',
     guestPhotos: 'overlay',
     footer: 'minimal',
+  },
+  theme: {
+    palette: 'terracotta',
   },
   couple: {
     bride: 'Ana',

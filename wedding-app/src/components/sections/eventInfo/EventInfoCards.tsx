@@ -1,4 +1,5 @@
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './EventInfoCards.module.css'
 
 type EventInfoCardsProps = {
   wedding: WeddingInfo
@@ -12,8 +13,8 @@ export function EventInfoCards({ wedding }: EventInfoCardsProps) {
   ]
 
   return (
-    <section className="event-cards-section" id="informacion">
-      <div className="event-cards-map">
+    <section className={styles.section} id="informacion">
+      <div className={styles.map}>
         <iframe
           title={`Mapa de ${wedding.venueName}`}
           src={wedding.mapsUrl}
@@ -22,7 +23,7 @@ export function EventInfoCards({ wedding }: EventInfoCardsProps) {
         />
       </div>
 
-      <div className="event-cards-grid">
+      <div className={styles.grid}>
         {items.map((item) => (
           <article key={item.label}>
             <h2>{item.label}:</h2>
@@ -31,7 +32,7 @@ export function EventInfoCards({ wedding }: EventInfoCardsProps) {
         ))}
       </div>
 
-      <p className="event-cards-closing">{wedding.eventInfo.closingText}</p>
+      <p className={styles.closing}>{wedding.eventInfo.closingText}</p>
     </section>
   )
 }

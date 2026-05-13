@@ -1,4 +1,5 @@
 import type { WeddingInfo } from '../../../types/wedding'
+import styles from './HeroClassic.module.css'
 
 type HeroClassicProps = {
   wedding: WeddingInfo
@@ -6,8 +7,8 @@ type HeroClassicProps = {
 
 export function HeroClassic({ wedding }: HeroClassicProps) {
   return (
-    <section className="hero-section" id="inicio" style={{ backgroundImage: `url(${wedding.heroImage})` }}>
-      <div className="hero-copy">
+    <section className={styles.section} id="inicio" style={{ backgroundImage: `url(${wedding.heroImage})` }}>
+      <div className={styles.copy}>
         <h1>
           <span>{wedding.couple.bride}</span>
           <span>&</span>

@@ -9,12 +9,16 @@ export const mariaJoseWedding: WeddingInfo = {
   slug: 'maria-jose',
   template: {
     page: 'classic',
+    nav: 'fixed',
     hero: 'classic',
     eventInfo: 'split',
     invitation: 'centered',
     gallery: 'classic',
     guestPhotos: 'stack',
     footer: 'sage',
+  },
+  theme: {
+    palette: 'sage',
   },
   couple: {
     bride: 'María',
