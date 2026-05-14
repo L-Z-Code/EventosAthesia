@@ -18,7 +18,7 @@ export const anaCarlosWedding: WeddingInfo = {
     footer: 'minimal',
   },
   theme: {
-    palette: 'terracotta',
+    palette: 'sage',
   },
   couple: {
     bride: 'Ana',
