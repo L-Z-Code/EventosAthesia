@@ -11,7 +11,7 @@ export const anaCarlosWedding: WeddingInfo = {
     page: 'editorial',
     nav: 'fixed',
     hero: 'editorial',
-    eventInfo: 'cards',
+    eventInfo: 'split',
     invitation: 'editorial',
     gallery: 'classic',
     guestPhotos: 'overlay',
