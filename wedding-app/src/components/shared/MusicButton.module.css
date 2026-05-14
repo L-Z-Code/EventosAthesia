@@ -1,0 +1,97 @@
+.toggle {
+  position: fixed;
+  right: clamp(18px, 3vw, 36px);
+  bottom: clamp(18px, 3vw, 36px);
+  z-index: 30;
+  display: grid;
+  width: clamp(48px, 4.6vw, 58px);
+  height: clamp(48px, 4.6vw, 58px);
+  place-items: center;
+  border: 1px solid rgba(65, 58, 39, 0.18);
+  border-radius: 50%;
+  background: var(--color-music-surface);
+  box-shadow: 0 14px 34px rgba(34, 28, 19, 0.16);
+  color: var(--color-music-accent);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  overflow: visible;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toggle svg {
+  width: 52%;
+  height: 52%;
+  fill: currentColor;
+}
+
+.toggle:hover,
+.toggle:focus-visible {
+  border-color: rgba(22, 20, 18, 0.45);
+  transform: translateY(-2px);
+}
+
+.isPlaying {
+  background: var(--color-music-accent);
+  color: var(--color-primary-contrast);
+}
+
+.notes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.notes span {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  color: var(--color-music-accent);
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: float-note 1.65s ease-out infinite;
+}
+
+.notes span:nth-child(1) {
+  animation-delay: 0s;
+  --note-x: -30px;
+  --note-rise: -78px;
+}
+
+.notes span:nth-child(2) {
+  animation-delay: 0.32s;
+  --note-x: 10px;
+  --note-rise: -92px;
+}
+
+.notes span:nth-child(3) {
+  animation-delay: 0.62s;
+  --note-x: -6px;
+  --note-rise: -68px;
+}
+
+.notes span:nth-child(4) {
+  animation-delay: 0.92s;
+  --note-x: 28px;
+  --note-rise: -84px;
+}
+
+@keyframes float-note {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 4px) scale(0.7) rotate(-8deg);
+  }
+
+  18% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--note-x)), var(--note-rise)) scale(1.18) rotate(10deg);
+  }
+}

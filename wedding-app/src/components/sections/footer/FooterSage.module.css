@@ -1,0 +1,25 @@
+.footer {
+  display: grid;
+  min-height: 144px;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 28px 20px;
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  text-align: center;
+}
+
+.message {
+  margin: 0;
+  font-family: var(--script);
+  font-size: clamp(2.1rem, 3vw, 3.2rem);
+  line-height: 0.9;
+}
+
+.details {
+  margin: 0;
+  color: var(--color-footer-text);
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  line-height: 1.3;
+}

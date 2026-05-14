@@ -1,0 +1,121 @@
+.section {
+  --editorial-peach: #f5c8ad;
+  --editorial-cream: #fff0c9;
+  min-height: 100svh;
+  padding: clamp(18px, 3vw, 34px) clamp(14px, 5vw, 70px) clamp(46px, 7vw, 86px);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0) 0 52%, var(--color-surface) 52% 100%),
+    radial-gradient(circle at 14% 18%, rgba(245, 200, 173, 0.32), transparent 28%),
+    radial-gradient(circle at 86% 12%, rgba(255, 240, 201, 0.68), transparent 30%),
+    var(--color-surface);
+}
+
+.copy {
+  display: grid;
+  justify-items: center;
+  margin: clamp(42px, 7vw, 96px) auto clamp(22px, 3.4vw, 38px);
+  text-align: center;
+}
+
+.copy h1 {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  color: var(--color-hero-title);
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5.5vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.9;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.copy h1 span {
+  color: var(--color-hero-ampersand);
+  font-size: 0.58em;
+  line-height: 0.85;
+}
+
+.collage {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(4px, 0.7vw, 8px);
+  width: min(820px, 100%);
+  height: clamp(190px, 22vw, 285px);
+  margin: 0 auto;
+  overflow: visible;
+  perspective: 900px;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 5px solid var(--color-surface);
+  box-shadow: 0 16px 34px rgba(86, 39, 25, 0.16);
+  filter: sepia(0.08) saturate(0.88);
+}
+
+.photoOne {
+  clip-path: polygon(2% 0, 100% 11%, 100% 83%, 0 100%);
+  transform: rotateY(18deg) translateY(8px);
+  transform-origin: right center;
+}
+
+.photoTwo {
+  z-index: 1;
+  clip-path: polygon(0 9%, 50% 12%, 100% 9%, 100% 88%, 50% 83%, 0 88%);
+  transform: translateY(2px);
+}
+
+.photoThree {
+  clip-path: polygon(0 11%, 98% 0, 100% 100%, 0 83%);
+  transform: rotateY(-18deg) translateY(8px);
+  transform-origin: left center;
+}
+
+@media (max-width: 900px) {
+  .copy {
+    margin-top: 40px;
+  }
+
+  .collage {
+    width: min(760px, 100%);
+    height: clamp(175px, 26vw, 245px);
+  }
+
+  .photo {
+    border-width: 4px;
+  }
+}
+
+@media (max-width: 560px) {
+  .copy {
+    margin-top: 32px;
+    margin-bottom: 28px;
+  }
+
+  .collage {
+    grid-template-columns: repeat(3, 1fr);
+    width: min(420px, 100%);
+    height: 170px;
+    gap: 3px;
+    transform: none;
+  }
+
+  .photo,
+  .photoTwo {
+    height: 100%;
+  }
+
+  .photoOne,
+  .photoThree {
+    display: block;
+  }
+
+  .photoTwo {
+    transform: translateY(1px);
+  }
+}
