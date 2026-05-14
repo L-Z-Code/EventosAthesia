@@ -11,14 +11,14 @@ export const anaCarlosWedding: WeddingInfo = {
     page: 'editorial',
     nav: 'fixed',
     hero: 'editorial',
-    eventInfo: 'cards',
+    eventInfo: 'split',
     invitation: 'editorial',
     gallery: 'classic',
     guestPhotos: 'overlay',
     footer: 'minimal',
   },
   theme: {
-    palette: 'sage',
+    palette: 'terracotta',
   },
   couple: {
     bride: 'Ana',
